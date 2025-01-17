@@ -10,10 +10,9 @@ const { config } = require('./config/config');
 
 const app = express();
 
-const options = {
-    passphrase: "password",
-    pfx: fs.readFileSync("./localhost.pfx")
-};
+// const options = {
+//     passphrase: "password",
+// };
 
 app.use(cors({
     origin: ["http://localhost:3000", "https://localhost:3000"],
@@ -34,5 +33,5 @@ app.use((err, req, res, next) => {
     res.status(err.statusCode || 500).json({message: err.message});
 });
 
-https.createServer(options, app)
-    .listen(3000, () => console.log("A szerver a 3000-es porton fut!"));
+
+app.listen(3000, () => console.log("A szerver a 3000-es porton fut!"));

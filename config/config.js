@@ -2,7 +2,7 @@ const config = {
     db: {
         host: "localhost",
         user: "root",
-        password: "password",
+        password: "",
         database: "my_rest_api"
     }
 };
